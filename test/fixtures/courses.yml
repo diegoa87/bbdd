@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_type_course: 1
+  city: MyString
+  starting_date: 2015-01-31
+  ending_date: 2015-01-31
+  teacher: MyString
+
+two:
+  id_type_course: 1
+  city: MyString
+  starting_date: 2015-01-31
+  ending_date: 2015-01-31
+  teacher: MyString
