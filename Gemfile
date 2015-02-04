@@ -13,6 +13,7 @@ gem 'devise'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 # Use sqlite3 as the database for Active Record
+gem 'rails_12factor', group: :production
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
