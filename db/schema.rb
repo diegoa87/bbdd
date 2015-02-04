@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131215257) do
+ActiveRecord::Schema.define(version: 20150201002410) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -48,12 +48,15 @@ ActiveRecord::Schema.define(version: 20150131215257) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "inscription_id"
   end
 
+  add_index "comments", ["inscription_id"], name: "index_comments_on_inscription_id"
+
   create_table "courses", force: :cascade do |t|
-    t.integer  "id_type_course"
+    t.integer  "type_course_id"
     t.string   "city"
     t.date     "starting_date"
     t.date     "ending_date"
@@ -63,8 +66,8 @@ ActiveRecord::Schema.define(version: 20150131215257) do
   end
 
   create_table "inscriptions", force: :cascade do |t|
-    t.integer  "id_user"
-    t.integer  "id_course"
+    t.integer  "user_id"
+    t.integer  "course_id"
     t.string   "status"
     t.integer  "payment"
     t.boolean  "invoice"
